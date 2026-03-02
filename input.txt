@@ -1,0 +1,4 @@
+19 89 3 sweet-potatoes 
+13 29 1 carrots 
+25 50 2 LEGO-figures 
+7 05 5 cheeseburgers 
