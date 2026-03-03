@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void normalizeAndRound(Money& m, bool roundFlag)
+void normalizeAndRound(Money& m, bool roundFlag) // зліпив до купи нормалізацію і округлення
 {
     if (m.kop >= 100)
     {
@@ -17,7 +17,7 @@ void normalizeAndRound(Money& m, bool roundFlag)
 
     int remainder = m.kop % 10;
 
-    if (remainder >= 5)
+    if (remainder >= 8)
         m.kop += (10 - remainder);
     else
         m.kop -= remainder;
