@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void normalizeAndRound(Money& m, bool roundFlag)
+void normalizeAndRound(Money& m) // зліпив до купи нормалізацію і округлення
 {
     if (m.kop >= 100)
     {
@@ -12,12 +12,9 @@ void normalizeAndRound(Money& m, bool roundFlag)
         m.kop %= 100;
     }
 
-    if (!roundFlag)
-        return;
-
     int remainder = m.kop % 10;
 
-    if (remainder >= 5)
+    if (remainder >= 8)
         m.kop += (10 - remainder);
     else
         m.kop -= remainder;
@@ -33,14 +30,12 @@ void add(Money& m1, const Money& m2)
 {
     m1.grn += m2.grn;
     m1.kop += m2.kop;
-    normalizeAndRound(m1, false);
 }
 
 void multiply(Money& m, int number)
 {
     m.grn *= number;
     m.kop *= number;
-    normalizeAndRound(m, false);
 }
 
 void print(const Money& m)
@@ -64,7 +59,7 @@ void runProgram()
     int grn, quantity;
     short int kop;
 
-    while (fscanf_s(file, "%d %hi %d %*s", &grn, &kop, &quantity) == 3)
+    while (fscanf_s(file, "%*s %d %hi %d", &grn, &kop, &quantity) == 3)
     {
         Money price = { grn, kop };
 
@@ -77,7 +72,7 @@ void runProgram()
     cout << "Total amount: ";
     print(total);
 
-    normalizeAndRound(total, true);
+    normalizeAndRound(total);
 
     cout << "Amount to pay (rounded): ";
     print(total);
