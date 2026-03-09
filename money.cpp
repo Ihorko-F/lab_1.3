@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 void normalizeAndRound(Money& m) // зліпив до купи нормалізацію і округлення
 {
     if (m.kop >= 100)

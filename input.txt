@@ -1,4 +1,4 @@
-sweet-potatoes 19 89 0
-carrots 13 31 1
-LEGO-figures 25 54 5
+sweet-potatoes 19 89 3
+carrots 13 29 1
+LEGO-figures 25 50 2
 cheeseburgers 7 05 5
